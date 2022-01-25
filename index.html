@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Zechao Li's Homepage</title>
+  <style type="text/css">
+    body {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+
+    p {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .caption {
+      font-size: 34px;
+      font-weight: normal;
+      color: #000;
+      font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
+    }
+
+    .caption-1 {
+      font-size: 16px;
+      font-family: Tahoma, Geneva, sans-serif;
+    }
+
+    .caption-2 {
+      font-size: 16px;
+      font-family: Tahoma, Geneva, sans-serif;
+      font-weight: bold;
+      color: #990000;
+    }
+
+    .caption-3 {
+      font-size: 16px;
+      font-family: Tahoma, Geneva, sans-serif;
+      font-weight: bold;
+      color: #F00;
+    }
+
+    .caption-4 {
+      font-size: 16px;
+      font-family: Tahoma, Geneva, sans-serif;
+      color: #990000;
+    }
+
+    .content {
+      font-size: 16px;
+      font-family: Tahoma, Geneva, sans-serif;
+      text-align: justify;
+    }
+
+    .content a {
+      font-size: 16px;
+      font-family: Tahoma, Geneva, sans-serif;
+      color: #000;
+    }
+
+    .content strong a {
+      font-size: 16px;
+      font-family: Tahoma, Geneva, sans-serif;
+      color: #990000;
+    }
+
+    .title-small {
+      font-size: 20px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-weight: bold;
+      color: #F90;
+    }
+
+    .title-large {
+      font-size: 28px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .margin {
+      font-size: 10px;
+      line-height: 10px;
+    }
+
+    .margin-small {
+      font-size: 5px;
+      line-height: 5px;
+    }
+
+    .margin-large {
+      font-size: 16px;
+      line-height: 16px;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    a:visited {
+      text-decoration: none;
+    }
+
+    content a:link {
+      text-decoration: none;
+    }
+
+    content a:visited {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:active {
+      text-decoration: underline;
+      color: #000000;
+      font-family: Tahoma, Geneva, sans-serif;
+    }
+
+    strong a:active {
+      text-decoration: underline;
+      color: #000000;
+    }
+
+    img {
+      border-color: black;
+    }
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script text="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript">
+        $(function(){
+            $(document).ready(function(){
+                $.ajax({
+                    type:"get",
+                    url:"paper_list.xml",//这里通过设置url属性来获取xml
+                    dataType:"xml",
+                    timeout:1000,      //设定超时
+                    cache:false,       //禁用缓存
+                    success:function(xml){//解析xml
+                        var frag = $("<div></div>");     //建立一个代码片段
+                        $(xml).find("paper").each(function(i){
+                            var t = $(this).children("title");   //获取title节点
+                            title = t.text();              //获取title文本
+                            author = $(this).children("author").text();     //获取author节点
+                            public = $(this).children("public").text();     //获取public节点
+                            pdf = $(this).children("pdf").text();           //获取pdf节点
+                            bib = $(this).children("bib").text();           //获取bib节点
+                            code = $(this).children("code").text();         //获取code节点
+                            //构造html字符串，通过append()方法添加到之前建立的代码段
+                            var content = "<table border='0'><tbody><tr><td width='20'><td valign='middle' width='800'>";
+                                content += "<p class='content'><strong>" + title + "</strong></p>";
+                                content += "<p class='content'>" + author + "</p>";
+                                content += "<p class='content'>" + public + "</p>";
+                                content += "<p class='content'><strong><a href='" + pdf + "'>PDF</a></strong> | <strong><a href='" 
+                                + bib + "'>BibTex</a></strong>";
+                            if (code != '' && !$.isEmptyObject(code)) {
+                              content += " | <strong><a href='" + code + "'>Code</a></strong> <br> </p>";
+                            }
+                                  
+                            frag.append(content)
+                        });
+                        frag.appendTo("#paperlist");
+                    }
+                });
+            })
+        })
+    </script>
+</head>
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-53682931-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<body>
+
+  <table border="0" width="100%">
+    <tbody>
+
+      <tr>
+
+        <td width="300">
+          <table>
+            <tr>
+              <td>
+                <a href="images/zcli.jpg"><img src="images/zcli.jpg" height="270" alt="Xiangbo Shu photo" border=1></td>
+            </tr>
+          </table>
+        </td>
+        <td width="5"></td>
+        <td></td>
+        <td>
+          <table border="0" width="100%">
+            <tbody>
+              <tr height="20">
+                <td colspan="2"></td>
+              </tr>
+
+
+              <tr height="60">
+                <td>
+                  <p class="caption">Zechao Li, 李泽超<br><br></p>
+                  <p class="content">Professor</p>
+                  <p class="content">Intelligent Media Analysis Group (IMAG)</p>
+                  <p class="content">School of Computer Science and Engineering</p>
+                  <p class="content">Nanjing University of Science and Technology</p>
+                </td>
+              </tr>
+
+              <tr height="60">
+                <td>
+                  <table border="0" width="100%">
+                    <tbody>
+                      <tr height="20">
+                        <td width="55">
+
+                          <p class="content"><strong>Email: </strong></p><br>
+                        </td>
+                        <td>
+                          <p class="content">zechao.li [AT] njust [DOT] edu [DOT] cn</p><br>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+
+              <tr height="40">
+                <td>
+                  <p class="margin">&nbsp;</p>
+                  <!-- <p class="content"><strong><a href="https://scholar.google.com/citations?user=FQfcm5oAAAAJ&hl=zh-CN&oi=ao">Google scholar</a></strong> | <strong><a href="https://dblp.uni-trier.de/pers/hd/s/Shu:Xiangbo">DBLP</a></strong> |<strong><a href="#sect-publications">Papers</a></strong> | <strong><a href="#sect-awards">Awards</a></p> -->
+                  <strong><a href="https://dblp.uni-trier.de/pers/hd/l/Li:Zechao">DBLP</a></strong> |<strong><a
+                      href="#sect-publications">Papers</a></strong> | <strong><a href="#sect-awards">Awards</a></p>
+                    <!-- <p class="content"><strong><a href="#sect-publications">Papers</a></strong> | <strong><a href="#sect-awards">Awards</a></strong> -->
+                </td>
+              </tr>
+              <tr height="20">
+                <td colspan="2"></td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="margin">&nbsp;</p>
+
+  <table border="0">
+    <tbody>
+      <tr>
+        <td width="900">
+          <p align="justify" class="content">Zechao Li is currently a Professor at the Nanjing University of Science and
+            Technology. He received the Bachelor’s degree from University of Science and Technology of China(USTC) in
+            2008 and the Doctor degree from National Laboratory of Pattern Recognition (NLPR), Institute of Automation,
+            Chinese Academy of Sciences in 2013. He has authored over 90 papers in top-tier journals and conferences.
+            His research interests include multimedia analysis and computer vision. He was a recipient of the Best Paper
+            Runner-up in ICIMCS 2018. He has served as an Associate Editor for the Neurocomputing.</p>
+          <br>
+          <!--
+				<p align="justify" class="content"> My Ph.D. was supported by a <strong><a href="https://research.fb.com/fellows/zhu-jun-yan/" target="_blank" rel="nofollow" class="caption-2">Facebook Fellowship</a></strong>.
+					My dissertation won the 2018 ACM SIGGRAPH Outstanding Doctoral Dissertation <strong><a href="https://www.siggraph.org/outstanding-doctoral-dissertation-award-jun-yan-zhu" target="_blank" rel="nofollow" class="caption-2">Award</a></strong> from SIGGRAPH
+					and 2017-18 David J. Sakrison Memorial <strong><a href="https://www2.eecs.berkeley.edu/Students/Awards/17/" target="_blank" rel="nofollow" class="caption-2">Prize</a></strong> for outstanding doctoral research from the UC Berkeley EECS Department.</p>
+        <br>
+		-->
+
+          <!--
+	<p align="justify" class="content">I received my B.E in Computer Sciences from Tsinghua University in 2012, where I worked with Prof. <strong><a href="http://pages.ucsd.edu/~ztu/" target="_blank" rel="nofollow" class="caption-2">Zhuowen Tu</a></strong> and Dr. <strong><a href="http://research.microsoft.com/en-us/people/echang/" target="_blank" rel="nofollow" class="caption-2">Eric Chang</a></strong> at Microsoft Research Asia and worked with
+			Prof. <strong><a href="http://cg.cs.tsinghua.edu.cn/" target="_blank" rel="nofollow" class="caption-2">Shi-Min Hu</a></strong> at Tsinghua's Graphics Group.</p>
+			-->
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 
+<br>
+<p id="sect-events" class="title-large">News &amp; Events</p>
+<p class="content">PyTorch <strong> <a href="https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix">code</a></strong> for CycleGAN and pix2pix (with PyTorch 0.4+).</p>
+<p class="content">CycleGAN/pix2pix <strong><a href="https://blog.udacity.com/2018/08/deep-learning-udacity-evolves.html">lecture</a></strong> at Udacity deep learning course.</p>
+<p class="content">SIGGRAPH Asia 2018, Technical Papers Committee member.<p>
+<p class="content">CVPR 2018 <strong><a href="https://sites.google.com/view/cvpr2018tutorialongans/">Tutorial</a></strong> on Generative Adversarial Networks.</p>
+<p class="content">ICCV 2017 <strong><a href="https://sites.google.com/view/iccv-2017-gans/">Tutorial</a></strong> on Generative Adversarial Networks.</p>
+<p class="content">ICML 2017 <strong><a href="http://icmlviz.github.io/">Workshop</a></strong>  on Visualization for Deep Learning.</p>
+<p class="content">SIGGRAPH Asia 2014 invited <strong><a href="http://kevinkaixu.net/courses/ddvc.html">Course</a></strong> on Data-Driven Visual Computing.</p>
+<br>
+-->
+
+  <p id="sect-Interests" class="title-large">Research Interests</p>
+  <p class="content">Computer Vision, Multimedia Computing, Deep Learning, Pattern Recognition</p>
+  <p class="content">Applications: Human Analysis, Face Analysis, Social Multimedia</p>
+  <br>
+
+  <p id="sect-awards" class="title-large">Awards</p>
+  <p class="content">2018 Best Student Paper Award of Internet Multimedia Computing and Service</p>
+  <p class="content">2017 The First Prize of Science and Technology Award of Jiangsu Province (“Image Structure
+    Representation and Recognition”)</p>
+  <p class="content">2017 Jiangsu National Science Fund for Distinguished Young Scholars</p>
+  <p class="content">2017 Young Talent Program of China Association for Science and Technology</p>
+  <p class="content">2016 The Youth Science and Technology Award of Jiangsu Computer Society</p>
+  <p class="content">2016 The Top 10% Paper Awards of IEEE MMSP</p>
+  <p class="content">2015 Excellent Doctoral Dissertation of Chinese Academy of Sciences</p>
+    <br>
+
+  <p id="sect-publications" class="title-large">Selected Publications (* is corresponding author)</p>
+  <p<strong> (* is corresponding author)</strong></p>
+    <!-- 
+<table border="0">
+  <tbody><tr>
+    <td width="140"><img src="images/cycada.jpg" border="1"width="210"></td>
+    <td width="20"></td>
+    <td valign="middle" width="800">
+			<p class="content"><strong> CyCADA: Cycle-Consistent Adversarial Domain Adaptation</strong></p>
+      <p class="content"><a href="https://people.eecs.berkeley.edu/~jhoffman/">Judy Hoffman</a>, <a href="https://github.com/erictzeng">Eric Tzeng</a>, <a href="https://taesung.me/">Taesung Park</a>, Jun-Yan Zhu, <a href="http://web.mit.edu/phillipi/">Phillip Isola</a>, <a href="http://www.eecs.berkeley.edu/~efros/">Alexei A. Efros</a>, and <a href="http://people.eecs.berkeley.edu/~pathak/">Trevor Darrell</a></p>
+      <p class="content">In International Conference on Machine Learning (<strong>ICML</strong>), 2018</p>
+	 <p class="margin-small">&nbsp;</p>
+	   <p class="content">
+     <strong><a href="https://arxiv.org/abs/1711.03213">Paper</a></strong> |
+		 <strong><a href="https://github.com/jhoffman/cycada_release">Code</a></strong> |
+			<strong><a href="projects/cycada/cycada.txt">BibTex</a></strong> <br>
+		</p>
+      </tr>
+</tbody></table>
+-->
+
+    <!-- <table border="0">
+      <tbody>
+        <tr>
+          <td width="20"></td>
+          <td valign="middle" width="800">
+            <p class="content"><strong>Weakly-supervised Semantic Guided Hashing for Social Image Retrieval.</strong></p>
+            <p class="content"><b>Zechao Li</b>, Jinhui Tang, Liyan Zhang, Jian Yang</p>
+            <p class="content">International Journal of Computer Vision, 2019</p>
+            <p class="margin-small">&nbsp;</p>
+            <p class="content">
+              <strong><a
+                  href="">PDF</a></strong>
+              |
+              <strong><a href="https:">BibTex</a></strong> <br> </p>
+        </tr>
+      </tbody>
+    </table> -->
+
+    <div id='paperlist'></div>
+
+
+    <br>
+
+    <h3><a name="TOC-Links"></a>
+      <font face="trebuchet ms, sans-serif"></b>
+      </font>
+    </h3>
+
+    <div style="display:none">
+        <!-- GoStats JavaScript Based Code -->
+        <script type="text/javascript" src="http://gostats.com/js/counter.js"></script>
+        <script type="text/javascript">_gos = 'c3.gostats.com'; _goa = 390583;
+        _got = 4; _goi = 1; _goz = 0; _god = 'hits'; _gol = 'web page statistics from GoStats'; _GoStatsRun();</script>
+        <a target="_blank" title="web page statistics from GoStats" href="http://gostats.com">
+    </div>
+
+    <!-- End GoStats JavaScript Based Code -->
+    <br>
+    <!-- <a href="https://clustrmaps.com/site/1ae97" title="Visit tracker"><img
+        src="//www.clustrmaps.com/map_v2.png?d=smLHFfsmfjs8fmCSuzoHueDWPzeRXLdL4ztDyhrhmSw&cl=ffffff" /></a> -->
+
+</body>
+
+</html>
