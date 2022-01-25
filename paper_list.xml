@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<paperlist>
+    <paper>
+        <title>Weakly-supervised Semantic Guided Hashing for Social Image Retrieval.</title>
+        <author><![CDATA[<b>Zechao Li</b>, Jinhui Tang, Liyan Zhang, Jian Yang]]></author>
+        <public>International Journal of Computer Vision, 2019</public>
+        <pdf>http://www.baidu.com</pdf>
+        <bib></bib>
+        <code>http://www.baidu.com</code>
+    </paper>
+    <paper>
+        <title>Facial Emotion Distribution Learning by Exploiting Low-Rank Label Correlations Locally</title>
+        <author><![CDATA[Xiuyi Jia, Xiang Zheng, Weiwei Li, Changqing Zhang, <b>Zechao Li</b>]]></author>
+        <public>CVPR 2019</public>
+        <pdf></pdf>
+        <bib></bib>
+        <code></code>
+    </paper>
+</paperlist>
