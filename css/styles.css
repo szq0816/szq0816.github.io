@@ -158,7 +158,28 @@ hr {
   font-weight:bold;
 }
 
-#Personal-introduction {
+#Personal-introduction1 {
+  color: rgba(34, 34, 34);
+  margin-top: 60px;
+  font-size:large;
+  font-weight:bold;
+}
+
+#Personal-introduction2 {
+  color: rgba(34, 34, 34);
+  margin-top: 60px;
+  font-size:large;
+  font-weight:bold;
+}
+
+#Personal-introduction3 {
+  color: rgba(34, 34, 34);
+  margin-top: 60px;
+  font-size:large;
+  font-weight:bold;
+}
+
+#Personal-introduction4 {
   color: rgba(34, 34, 34);
   margin-top: 60px;
   font-size:large;
