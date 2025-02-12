@@ -201,7 +201,10 @@ hr {
   margin: 0 auto; /* 居中显示 */
   border: 1px solid #ccc; /* 添加边框以更好地展示效果 */
   padding: 10px; /* 添加内边距 */
-        }
+  color: rgba(34, 34, 34);
+  font-size:large;
+  font-weight:bold;
+}
 
 .publication {
     display: block;
