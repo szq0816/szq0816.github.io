@@ -199,8 +199,6 @@ hr {
   text-align: justify;
   width: 80%; /* 设置一个宽度以更好地展示效果 */
   margin: 0 auto; /* 居中显示 */
-  border: 1px solid #ccc; /* 添加边框以更好地展示效果 */
-  padding: 10px; /* 添加内边距 */
 }
 
 .publication {
