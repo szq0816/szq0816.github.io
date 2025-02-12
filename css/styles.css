@@ -81,7 +81,10 @@ hr {
 .fr {
   float: right;
 }
-
+p.superscript span {
+    vertical-align: super;
+    font-size: smaller;
+}
 .col-1,
 .col-2,
 .col-3,
