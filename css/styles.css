@@ -197,7 +197,7 @@ hr {
 }
 .justify-text {
   text-align: justify;
-  width: 80%; /* 设置一个宽度以更好地展示效果 */
+  width: 100%; /* 设置一个宽度以更好地展示效果 */
   margin: 0 auto; /* 居中显示 */
 }
 
