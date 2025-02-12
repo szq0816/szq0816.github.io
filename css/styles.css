@@ -129,6 +129,10 @@ hr {
   margin:0 auto;
 }
 
+.p-head {
+    color: red;
+}
+
 .container {
   background-color: #fff;
   display: block;
